@@ -5,9 +5,11 @@ const cors = require("cors")
 const fs= require("fs")
 const {json} = require("body-parser")
 const uuid=require("uuid")
+const menuRouter = require("./routes/menu.route.js")
 
 app.use(cors())
 app.use(json())
+app.use("/api",menuRouter)
 
 const file = "./data/users.json";
 const uniqueRandomID = uuid.v4()
